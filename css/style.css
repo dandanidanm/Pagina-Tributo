@@ -1,0 +1,437 @@
+/* Variables */
+:root{
+ --first-color: #494852;
+ --second-color: #030718;
+ --second-alpha-color: rgba(20, 25, 45, 0.75);
+ --white-color: #fff;
+ --gray-light-color: #f3f3f3;
+ --gray-color: #ccc;
+ --gray-dark-color: #666;
+ --black-color: #000;
+ --white-alpha-color: rgba(255, 255, 255, 0.5);
+ --black-alpha-color: rgba(0, 0, 0, 0.5);
+ --font: 'Ubuntu', sans-serif;
+ --max-width: 960px;
+ --header-height: 4rem;
+ --box-shadow: 0.25rem 0.25rem 1rem rgba(0,0 ,0 , 0.8);
+}
+
+/* Reset */
+html {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+ *,
+ *:after,
+ *:before{
+   box-sizing:inherit;
+   padding: 0;
+   margin: 0;
+   text-decoration:none;
+   line-height: 1.5;
+   scroll-behavior: smooth;
+ }
+
+/* Tamaño para los contenedores */
+.wrapper{
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.header{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: var(--header-height);
+  background-color: transparent;
+}
+
+/* Color para el header */
+.header-color{
+  background-color: var(--second-color);
+  transition: all 1s ease;
+}
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+.logo{
+  margin: 1rem;
+}
+.logo h2{
+  color: var(--white-color);
+  font-size: 2rem;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--header-height);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s ease;
+}
+.menu>a{
+  color: var(--white-color);
+  font-size: 2rem;
+  padding: .7rem;
+  width: 100%;
+  text-align: center;
+}
+.menu a:hover{
+  color: var(--second-color);
+  background-color: var(--white-color);
+}
+.menu-btn{
+  margin: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.menu-btn svg{
+  fill: var(--white-color);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: solid 2px #fff;
+  border-radius: 50%;
+}
+.none{
+  display: none;
+}
+.is-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Seccion del inicio */
+.hero-images{
+  background-image: url("/css/assets/linkinpark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.hero-images-opacity{
+  background-color: var(--black-alpha-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center; 
+}
+.hero-images-opacity p{
+  color: var(--white-color);
+  font-size: 1.1rem;
+  margin: 1rem;
+  text-align: center;
+}
+.hero-images-opacity h5{
+  color: var(--white-color);
+  font-size: 1rem;
+  width: 100%;
+  text-align: end;
+  margin-right: 5rem;
+}
+
+/* Seccion de la historia */
+.history{
+  background-color: var(--gray-color);
+}
+.history-container{
+  text-align: center;
+  padding: 1rem;
+}
+#title{
+  font-size: 2rem;
+}
+.history-container h6{
+  font-size: .8rem;
+}
+.history-container p{
+  background-color: var(--gray-light-color);
+  margin: 1rem 0;
+  padding: 1rem .4rem;
+  border-radius: 5px;
+}
+.history-images{
+  overflow: hidden;
+  width: 100%;
+}
+.history-images img{
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Seccion de los integrantes*/
+
+.integrants{
+  text-align: center;
+}
+.integrants-title{
+  color: var(--white-color);
+  background-color: var(--first-color);
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+.integrant-profile{
+  margin: 3rem 2rem;
+  background-color: var(--black-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+.integrant-profile:nth-of-type(1){
+  margin-top: 1rem;
+}
+.integrant-profile > p, h2, h5, small, a{
+  color: var(--white-color);
+  margin: 1rem .5rem;
+}
+.integrant-profile h2{
+  margin-bottom: 0;
+}
+.integrant-profile h5{
+  margin-top: 0;
+}
+.integrant-image{
+  overflow: hidden;
+  width: 100%;
+}
+.integrant-image img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Seccion musica donde se encuentra los album con un modal */
+.music{
+  background-color: var(--first-color) ;
+}
+.music-container{
+  text-align: center;
+  padding: 1rem;
+}
+.music-title{
+  color: var(--first-color);
+  background-color: var(--white-color);
+  text-align: center;
+  border-radius: 10px;
+}
+.album-image>h2{
+  color: var(--first-color);
+  background-color: var(--gray-light-color);
+  margin: 0 6rem 0 0;
+  border-radius: 10px 10px 0 0;
+  border: 2px solid black;
+}
+.album-image{
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+.album-image:last-of-type{
+  margin-bottom: 0;
+ /*  padding-bottom: .3rem; */
+}
+.album-image img{
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+.album-modal{
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1111;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease;
+}
+.album-modal h2{
+  margin-top: 4rem;
+  font-size: 2rem;
+}
+.album-modal>ol li{
+  color: var(--white-color);
+  margin-top: .6rem;
+}
+.margin-modal>ol li{
+  margin-top: .2rem;
+}
+.close{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent; 
+}
+.close svg{
+    fill: var(--white-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: solid 2px #fff;
+    border-radius: 50%;
+}
+.opacity{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* footer */
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: var(--header-height);
+  background-color: var(--first-color);
+}
+.footer p {
+  color: var(--white-color);
+}
+/* MediaQueries */
+
+@media screen and (min-width:768px){
+  /* Hero images */
+  .hero-images-opacity p{
+    color: var(--white-color);
+    font-size: 1.1rem;
+    margin: 1rem 7rem;
+    text-align: center;
+  }
+  .hero-images-opacity h5{
+    width: 100%;
+    text-align: end;
+    margin-right: 15rem;
+  }
+
+  /* Integrants images */
+  .integrants{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+  .integrant-profile{
+    margin: 2rem;
+  }
+  .integrant-profile:nth-of-type(1){
+    margin-top: 2rem;
+  }
+  .integrants-title{
+    font-size: 3rem;
+    grid-column: -1/1;
+  }
+
+  /* albumes dividido en dos columnas*/
+  .music-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+  .music-title{
+    grid-column: -1/1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width:960px){
+  /* Header */
+  .header{
+    top: 0;
+  }
+  .menu-btn{
+    display: none;
+  }
+  .menu{
+    position: static;
+    flex-direction: row;
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+  }
+  .menu a{
+    color: var(--white-color);
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
+  .menu a:hover{
+    color: var(--second-color);
+    background-color: var(--white-color);
+  }
+
+  /* Hero Images */
+  .hero-images-opacity p{
+    color: var(--white-color);
+    font-size: 1.3rem;
+    margin: 1rem 10rem;
+    text-align: center;
+  }
+
+  /* Seccion Historia */
+  .history{
+    padding: var(--header-height);
+  }
+  .history-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(autofill,1fr);
+    grid-column-gap: 1rem;
+  }
+  .history-title{
+    grid-column: -1/1;
+  }
+  .history-container p:nth-of-type(1){
+    grid-column: -1/1;
+  }
+  .history-container p:nth-of-type(2){
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .history-container p:nth-of-type(6){
+    grid-column: -1/1;
+  }
+  .history-container span{
+    grid-column: -1/1;
+  }
+  .history-images{
+    align-self: center;
+  }
+
+    /* Integrants images */
+    .integrants{
+      padding: var(--header-height);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(auto, 1fr);
+    }
+
+    /* albumes */
+    .music-container{
+      padding: var(--header-height);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(auto, 1fr);
+    }
+    .music-title{
+      grid-column: -1/1;
+    }
+    .footer{
+      padding: 1rem;
+    }
+}  
