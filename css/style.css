@@ -115,7 +115,7 @@ html {
 
 /* Seccion del inicio */
 .hero-images{
-  background-image: url("/css/assets/linkinpark.jpg");
+  background-image: url("../css/assets/linkinpark.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
